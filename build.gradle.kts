@@ -13,6 +13,8 @@ java.sourceCompatibility = VERSION_1_8
 
 dependencies {
     implementation(gradleApi())
+    // tools
+    implementation("com.monkeydp:tools")
     // test
     testImplementation("junit:junit:4.12")
 }
