@@ -12,7 +12,10 @@ version = "0.0.4-SNAPSHOT"
 java.sourceCompatibility = VERSION_1_8
 
 dependencies {
+    // tools
     implementation("com.monkeydp:tools")
+    // test
+    testImplementation("junit:junit:4.12")
 }
 
 tasks.withType<KotlinCompile> {
