@@ -1,4 +1,4 @@
-package com.monkeydp.daios.dm.plugin
+package com.monkeydp.daios.dm.plugin.tasks
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.FileCollection
