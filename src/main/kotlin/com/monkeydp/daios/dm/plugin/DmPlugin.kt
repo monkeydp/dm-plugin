@@ -9,16 +9,8 @@ import org.gradle.api.Project
  * @date 2019/11/28
  */
 class DmPlugin : Plugin<Project> {
-    
-    lateinit var pluginExt: DmPluginExt
-    private fun initPluginExt(project: Project) {
-        if (::pluginExt.isInitialized) return
-        pluginExt = project.extensions.create("dmPluginExt", DmPluginExt::class.java)
-    }
-    
     override fun apply(project: Project) {
-        initPluginExt(project)
-        project.tasks.register("copyLibsToDist", CopyLibsToDist::class.java, pluginExt)
+        project.tasks.register("copyLibsToDist", CopyLibsToDist::class.java)
         project.tasks.register("hello") {
             it.group = "dm"
             it.doLast {
