@@ -9,4 +9,12 @@ import kotlin.properties.Delegates
  * @author iPotato
  * @date 2019/11/29
  */
-var Project.dmPluginExt by Delegates.notNullSingleton<DmPluginExt>(true)
+internal var Project.dmPluginExt by Delegates.notNullSingleton<DmPluginExt>(true)
+
+fun Project.dmPluginExt(
+        @Suppress("unused_parameter")
+        init: DmPluginExt.() -> Unit
+) {
+    dmPluginExt = DmPluginExt()
+    dmPluginExt.init()
+}
