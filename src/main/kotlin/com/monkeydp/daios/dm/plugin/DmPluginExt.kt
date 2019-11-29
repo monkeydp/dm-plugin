@@ -10,5 +10,5 @@ import kotlin.properties.Delegates
  * @date 2019/11/28
  */
 class DmPluginExt {
-    var runtimeClasspath by Delegates.notNullSingleton<NamedDomainObjectProvider<Configuration>>()
+    var runtimeClasspath by Delegates.notNullSingleton<NamedDomainObjectProvider<Configuration>>(true)
 }
