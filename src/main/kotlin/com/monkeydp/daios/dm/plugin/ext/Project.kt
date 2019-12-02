@@ -2,6 +2,7 @@ package com.monkeydp.daios.dm.plugin.ext
 
 import com.monkeydp.daios.dm.plugin.DmPluginExt
 import com.monkeydp.daios.dm.plugin.config.projectConfig
+import com.monkeydp.tools.ext.initInstance
 import com.monkeydp.tools.ext.notNullSingleton
 import org.gradle.api.Project
 import kotlin.properties.Delegates
@@ -16,8 +17,7 @@ fun Project.dmPluginExt(
         @Suppress("unused_parameter")
         init: DmPluginExt.() -> Unit
 ) {
-    dmPluginExt = DmPluginExt()
-    dmPluginExt.init()
+    dmPluginExt = initInstance<DmPluginExt>(init)
 }
 
 val Project.config

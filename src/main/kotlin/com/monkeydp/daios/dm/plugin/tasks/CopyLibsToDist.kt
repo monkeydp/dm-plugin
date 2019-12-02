@@ -1,7 +1,7 @@
 package com.monkeydp.daios.dm.plugin.tasks
 
 import com.monkeydp.daios.dm.plugin.constant.DmRegex
-import com.monkeydp.daios.dm.plugin.ext.dmPluginExt
+import com.monkeydp.daios.dm.plugin.ext.runtimeClasspath
 import org.gradle.api.tasks.TaskAction
 import java.io.File
 
@@ -17,8 +17,7 @@ open class CopyLibsToDist : AbstractDmTask() {
     fun execute() {
         if (commonLibsDir.exists()) commonLibsDir.deleteRecursively()
         commonLibsDir.mkdir()
-        
-        val libs = project.dmPluginExt.runtimeClasspath.get().filter { it.name.matches(DmRegex.dmBaseJarRegex) }
+        val libs = project.configurations.runtimeClasspath.get().filter { it.name.matches(DmRegex.dmBaseJarRegex) }
         
         project.copy {
             it.from(libs)
