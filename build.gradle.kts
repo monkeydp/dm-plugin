@@ -13,6 +13,7 @@ java.sourceCompatibility = VERSION_1_8
 
 dependencies {
     implementation(gradleApi())
+    implementation(gradleKotlinDsl())
     // tools
     implementation("com.monkeydp:tools")
     // test

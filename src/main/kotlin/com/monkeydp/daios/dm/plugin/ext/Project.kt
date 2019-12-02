@@ -1,6 +1,7 @@
 package com.monkeydp.daios.dm.plugin.ext
 
 import com.monkeydp.daios.dm.plugin.DmPluginExt
+import com.monkeydp.daios.dm.plugin.config.projectConfig
 import com.monkeydp.tools.ext.notNullSingleton
 import org.gradle.api.Project
 import kotlin.properties.Delegates
@@ -18,3 +19,11 @@ fun Project.dmPluginExt(
     dmPluginExt = DmPluginExt()
     dmPluginExt.init()
 }
+
+val Project.config
+    get() = projectConfig {
+        dist {
+            sourcePaths = arrayOf("$buildDir/classes/kotlin/main/com")
+            destPath = "classes/com"
+        }
+    }

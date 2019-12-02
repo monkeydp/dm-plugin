@@ -1,8 +1,12 @@
 package com.monkeydp.daios.dm.plugin
 
 import com.monkeydp.daios.dm.plugin.tasks.CopyLibsToDist
+import com.monkeydp.tools.ext.lowerCameCaseName
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.Task
+import org.gradle.api.tasks.TaskContainer
+import kotlin.reflect.KClass
 
 /**
  * @author iPotato
@@ -10,7 +14,7 @@ import org.gradle.api.Project
  */
 class DmPlugin : Plugin<Project> {
     override fun apply(project: Project) {
-        project.tasks.register("copyLibsToDist", CopyLibsToDist::class.java)
+        project.tasks.registerSingleton(CopyLibsToDist::class)
         project.tasks.register("hello") {
             it.group = "dm"
             it.doLast {
@@ -18,4 +22,7 @@ class DmPlugin : Plugin<Project> {
             }
         }
     }
+    
+    private fun <T : Task> TaskContainer.registerSingleton(kType: KClass<T>) =
+            register(kType.lowerCameCaseName(), kType.java)
 }
