@@ -11,7 +11,7 @@ import kotlin.properties.Delegates
  * @author iPotato
  * @date 2019/11/29
  */
-internal var Project.dmPluginExt by Delegates.notNullSingleton<DmPluginExt>(true)
+internal var Project.dmPluginExt by Delegates.notNullSingleton<DmPluginExt>(ignoreAlreadyInitialized = true)
 
 fun Project.dmPluginExt(
         @Suppress("unused_parameter")
