@@ -1,6 +1,6 @@
 package com.monkeydp.daios.dm.plugin.config
 
-import com.monkeydp.tools.ext.initInstance
+import com.monkeydp.tools.ext.kotlin.initInstance
 
 /**
  * @author iPotato
@@ -19,4 +19,5 @@ class ProjectConfig() {
     }
 }
 
-fun projectConfig(init: ProjectConfig.() -> Unit) = initInstance<ProjectConfig>(init)
+fun projectConfig(init: ProjectConfig.() -> Unit) =
+        initInstance<ProjectConfig>(init)

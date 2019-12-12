@@ -2,8 +2,8 @@ package com.monkeydp.daios.dm.plugin.ext
 
 import com.monkeydp.daios.dm.plugin.DmPluginExt
 import com.monkeydp.daios.dm.plugin.config.projectConfig
-import com.monkeydp.tools.ext.initInstance
-import com.monkeydp.tools.ext.notNullSingleton
+import com.monkeydp.tools.ext.kotlin.initInstance
+import com.monkeydp.tools.ext.kotlin.notNullSingleton
 import org.gradle.api.Project
 import kotlin.properties.Delegates
 

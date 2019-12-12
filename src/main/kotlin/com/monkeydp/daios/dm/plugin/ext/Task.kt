@@ -1,7 +1,7 @@
 package com.monkeydp.daios.dm.plugin.ext
 
 import com.monkeydp.daios.dm.plugin.tasks.CopyLibsToDist
-import com.monkeydp.tools.ext.lowerCameCaseName
+import com.monkeydp.tools.ext.kotlin.lowerCameCaseName
 import org.gradle.api.tasks.TaskContainer
 import org.gradle.kotlin.dsl.named
 
