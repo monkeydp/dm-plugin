@@ -17,7 +17,7 @@ dependencies {
     // tools
     implementation("com.monkeydp:tools")
     // test
-    testImplementation("junit:junit:4.12")
+    testImplementation(kotlin("test-junit5"))
 }
 
 tasks.withType<KotlinCompile> {
