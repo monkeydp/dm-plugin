@@ -1,8 +1,7 @@
 package com.monkeydp.daios.dm.plugin.ext
 
 import com.monkeydp.daios.dm.plugin.DmPluginExt
-import com.monkeydp.daios.dm.plugin.config.projectConfig
-import com.monkeydp.tools.ext.kotlin.initInstance
+import com.monkeydp.daios.dm.plugin.config.ProjectConfig
 import com.monkeydp.tools.ext.kotlin.singleton
 import org.gradle.api.Project
 import kotlin.properties.Delegates
@@ -17,11 +16,11 @@ fun Project.dmPluginExt(
         @Suppress("unused_parameter")
         init: DmPluginExt.() -> Unit
 ) {
-    dmPluginExt = initInstance<DmPluginExt>(init)
+    dmPluginExt = DmPluginExt(init)
 }
 
 val Project.config
-    get() = projectConfig {
+    get() = ProjectConfig {
         dist {
             sourcePaths = arrayOf("$buildDir/classes/kotlin/main/com")
             destPath = "classes/com"
