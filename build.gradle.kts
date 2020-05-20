@@ -15,7 +15,7 @@ dependencies {
     implementation(gradleApi())
     implementation(gradleKotlinDsl())
     // tools
-    implementation("com.monkeydp:tools")
+    implementation("com.monkeydp:tools:1.0.+")
     // test
     testImplementation(kotlin("test-junit5"))
 }
